@@ -164,9 +164,9 @@ function App() {
       const payload = { keyword: keyword };
       console.log('[MarketPulse] Sending analysis request');
       console.log('[MarketPulse] Request payload', payload);
-      console.log('[MarketPulse] Target URL', 'http://127.0.0.1:5000/api/analyze');
+      console.log('[MarketPulse] Target URL', 'https://marketpulse-os.onrender.com/api/analyze');
 
-      const response = await axios.post('http://127.0.0.1:5000/api/analyze', payload);
+      const response = await axios.post('https://marketpulse-os.onrender.com/api/analyze', payload);
 
       console.log('[MarketPulse] Response received', { status: response.data.status, product_count: response.data.product_count });
       
