@@ -17,11 +17,11 @@ class MarketIntelligenceAgent:
     def __init__(self):
         self.api_key = os.getenv("GEMINI_API_KEY")
 
-    if not self.api_key:
-        raise ValueError("GEMINI_API_KEY not found")
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY not found")
 
-    genai.configure(api_key=self.api_key)
-    self.model = genai.GenerativeModel("gemini-2.5-flash")
+        genai.configure(api_key=self.api_key)
+        self.model = genai.GenerativeModel("gemini-2.5-flash")
 
     # ------------------------------------------------------------------
     # Gemini call with rate-limit retry + timeout guard
