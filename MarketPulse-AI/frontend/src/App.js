@@ -128,7 +128,7 @@ function App() {
       terminalEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [scanStep]);
 
-  const scanningSteps = [
+  const scanningSteps = React.useMemo(() => [
     { text: "Connecting to Bright Data APIs...", status: "Establishing Link" },
     { text: "Scanning live Amazon ecosystem...", status: "Live Web Crawl" },
     { text: "Extracting competitor pricing & tiering...", status: "Data Extraction" },
@@ -136,7 +136,7 @@ function App() {
     { text: "Calculating pricing pressure & market trends...", status: "Trend Detection" },
     { text: "Executing Gemini AI strategic reasoning...", status: "Reasoning Phase" },
     { text: "Generating executive intelligence report...", status: "Finalizing Render" }
-  ];
+  ], []);
 
   useEffect(() => {
     let interval;
