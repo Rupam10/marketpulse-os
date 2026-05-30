@@ -15,7 +15,7 @@ log = logging.getLogger("marketpulse.agent")
 
 class MarketIntelligenceAgent:
     def __init__(self):
-    self.api_key = os.getenv("GEMINI_API_KEY")
+        self.api_key = os.getenv("GEMINI_API_KEY")
 
     if not self.api_key:
         raise ValueError("GEMINI_API_KEY not found")
