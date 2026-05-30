@@ -149,7 +149,7 @@ function App() {
       setAgentStatus('LIVE DATA ACTIVE');
     }
     return () => clearInterval(interval);
-  }, [loading, scanStep, data]);
+   }, [loading, scanStep, data, scanningSteps]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
